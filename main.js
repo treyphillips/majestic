@@ -10,24 +10,18 @@
     defaults: {
       name: '',
       price: '',
-    },
-
-    // initialize: function() {
-    //   MenuView.items = new MenuItems();
-    //   this.items.fetch();
-    //
-    // },
+    }
   });
 
   var MenuItemsCollection = Backbone.Collection.extend({
-    // tagName: 'ul',
-    // className: 'menu-list',
+    tagName: 'ul',
     model: MenuItems,
     url: 'https://api.parse.com/1/classes/menuItem',
 
     parse: function(response) {
-      // console.log('response');
+      console.log(response);
       return response.results;
+
     }
   });
 
@@ -69,12 +63,10 @@
  },
 
  render: function(){
-     var listItems = this.$el.html(this.template(this.model.toJSON()));
-     _.each(listItems, function(item){
-       var MenuView = new MenuView({collection:MenuItemsCollection, model:new MenuItems()});
-       itemView.render();
-     });
-   },
+   this.$el.html(this.template());
+   return this;
+ }
+
   });
 
 
