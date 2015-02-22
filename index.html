@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Majestic Candy</title>
 </head>
+
 <body>
 
-<h1>Majestic Candy</h1>
+  <h1>Majestic Candy</h1>
+  <div id="app-container"></div>
+
+  <script type="text/template" data-template-name="menu-template">
+    <div><%= name %></div>
+    <div><%= price %></div>
+    <button>Add</button>
+  </script>
 
 
-
-  <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
 
   <script src="main.js"></script>
+
 </body>
+
 </html>
